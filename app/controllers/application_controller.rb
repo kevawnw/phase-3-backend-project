@@ -16,11 +16,18 @@ class ApplicationController < Sinatra::Base
    
   end 
 
+
   get '/main-budget' do
     MainBudget.first.balance.to_json
   end
 
   # This is the post
+
+  patch '/main-budget' do
+    MainBudget.first.update(
+      balance: params[:balance]
+    ).to_json
+  end
 
   post '/wallet' do 
     cat = Category.where(name: params[:category]).first_or_create
@@ -37,5 +44,11 @@ class ApplicationController < Sinatra::Base
   end
 
 
+
+  delete '/transactions/:id' do
+    transaction = Transaction.find(params[:id])
+    transaction.destroy
+    transaction.to_json
+  end
 
 end
