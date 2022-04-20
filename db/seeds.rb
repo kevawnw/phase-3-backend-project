@@ -5,10 +5,10 @@ m1 = MainBudget.create!(balance: 4000)
 
 puts "🌱 Seeding user..."
 
-user1 = User.create!(name: "Dad", title: "Husband")
-user2 = User.create!(name: "Mom", title: "Wife")
-user3 = User.create!(name: "Daughter", title: "Child")
-user4 = User.create!(name: "Son", title: "Child")
+user1 = User.create!(name: "Dad")
+user2 = User.create!(name: "Mom")
+user3 = User.create!(name: "Daughter")
+user4 = User.create!(name: "Son")
 
 puts "seeding categories"
 

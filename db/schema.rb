@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2022_04_19_134750) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "title"
   end
 
   create_table "wallets", force: :cascade do |t|
