@@ -19,10 +19,10 @@ c4 = Category.create!(name: "Bills")
 
 puts "Seeding wallet"
 
-w1 = Wallet.create!(balance: rand(0.00..400.00), date: Time.now(), user: user1, category: c4, main_budget: m1 )
-w2 = Wallet.create!(balance: rand(0.00..400.00), date: Time.now(), user: user2, category: c1, main_budget: m1)
-w3 = Wallet.create!(balance: rand(0.00..400.00), date: Time.now(), user: user3, category: c2, main_budget: m1)
-w4 = Wallet.create!(balance: rand(0.00..400.00), date: Time.now(), user: user4, category: c3, main_budget: m1)
+w1 = Wallet.create!(balance: 350.00, date: Time.now(), user: user1, category: c4, main_budget: m1 )
+w2 = Wallet.create!(balance: 500.00, date: Time.now(), user: user2, category: c1, main_budget: m1)
+w3 = Wallet.create!(balance: 280.00, date: Time.now(), user: user3, category: c2, main_budget: m1)
+w4 = Wallet.create!(balance: 790.00, date: Time.now(), user: user4, category: c3, main_budget: m1)
 
 puts "Seeding transaction"
 
