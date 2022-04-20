@@ -21,7 +21,7 @@ class ApplicationController < Sinatra::Base
   post '/wallet' do 
     cat = Category.where(name: params[:category]).first_or_create
     Wallet.create(balance: params[:balance], date: params[:date], user_id: params[:user_id], category: cat, main_budget_id: params[:main_budget_id]
-    ).to_json
+    ).to_json(include: :category)
   end
 
   get '/main-budget' do
