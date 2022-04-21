@@ -44,11 +44,15 @@ class ApplicationController < Sinatra::Base
   end
 
 
-
   delete '/transactions/:id' do
     transaction = Transaction.find(params[:id])
     transaction.destroy
     transaction.to_json
   end
 
+  delete '/users/:id' do
+    user = User.find(params[:id])
+    user.destroy
+    user.to_json
+  end
 end
