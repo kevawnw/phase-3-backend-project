@@ -50,6 +50,12 @@ class ApplicationController < Sinatra::Base
     transaction.to_json
   end
 
+  delete '/wallets/:id' do
+    wallet = Wallet.find(params[:id])
+    wallet.destroy
+    wallet.to_json
+  end
+
   delete '/users/:id' do
     user = User.find(params[:id])
     user.destroy
