@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   # This is the get
   
   get "/users" do 
-    User.all.to_json
+    User.all.to_json(include: {wallets: {include: :category}})
   end
 
   get '/transactions' do 
@@ -40,9 +40,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/users' do
-    User.create(name: params[:name]).to_json
+    User.create(name: params[:name]).to_json(include: {wallets: {include: :category}})
   end
-
 
 
   delete '/transactions/:id' do
@@ -51,4 +50,9 @@ class ApplicationController < Sinatra::Base
     transaction.to_json
   end
 
+  delete '/users/:id' do
+    user = User.find(params[:id])
+    user.destroy
+    user.to_json
+  end
 end
