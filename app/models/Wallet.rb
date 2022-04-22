@@ -1,7 +1,7 @@
 class Wallet < ActiveRecord::Base
     belongs_to :user
     belongs_to :category
-    has_many :transactions
+    has_many :transactions, dependent: :destroy
     belongs_to :main_budget
 
 
